@@ -13,6 +13,29 @@ $(function () {
     var hour = $(this).parent().attr("id");
     localStorage.setItem(hour, inputValue);
   });
+  
+  function hourColorUpdate() {
+    var currentHour = dayjs().hour();
+    console.log(currentHour);
+
+
+  $(".time-block").each(function () {
+    console.log("something");
+    var timeBlockHour = parseInt($(this).attr("id").split("-")[1]);
+    if (timeBlockHour < currentHour) {
+      $(this).addClass("past");
+    } else if (timeBlockHour === currentHour) {
+      $(this).removeClass("past");
+      $(this).addClass("present");
+    } else {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+    }
+  });
+}
+
+hourColorUpdate();
 
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -24,3 +47,4 @@ $(function () {
   $("#hour-17 .description").val(localStorage.getItem("hour-17")); 
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
   $("#hour-18 .description").val(localStorage.getItem("hour-18"));
+});
