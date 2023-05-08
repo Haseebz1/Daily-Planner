@@ -32,8 +32,9 @@ THEN the saved events persist
 
 ## link
 
+https://github.com/Haseebz1/Daily-Planner.git
 
-
+https://haseebz1.github.io/Daily-Planner/
 
 ## screenshot 
 
